@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delte</title>
+</head>
+<body>
+    <h1>Delete items</h1>
+    <form method="post">
+        {%csrf_token%}
+        <input name="delete_item" type="text" list="delete">
+        <datalist id="delete">
+            {%for i in items%}
+                <option value="{{i}}"></option>
+            {%endfor%}
+        </datalist>
+        <button type="submit">Submit</button>
+    </form>
+    <a href="{%url 'index' %}">Back</a>
+</body>
+</html>

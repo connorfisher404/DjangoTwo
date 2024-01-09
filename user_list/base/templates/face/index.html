@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UserList</title>
+</head>
+<body>
+    <h1>To do list</h1>
+    <ul>
+        {%for i in items%}
+            <li>{{i}}</li>
+        {%endfor%}
+
+    </ul>
+    <form method="post">
+        {%csrf_token%}
+        <input name="add_item" type="text" placeholder="add item">
+        <button type="submit">Submit</button>
+    </form>
+
+    <a href="{% url 'delete' %}">Delete</a>
+
+</body>
+</html>
